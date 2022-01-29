@@ -8,7 +8,6 @@ const NavbarContainer = styled.nav`
     flex-direction: column;
 `;
 
-
 export {
   NavbarContainer,
 };
