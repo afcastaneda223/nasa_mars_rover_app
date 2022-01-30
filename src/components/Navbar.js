@@ -31,14 +31,14 @@ const Navbar = () => {
           </NavbarLinksContainer>
         </RightContainer>
       </NavbarFullContainer>
-      { smallNavbar ? (
+      { smallNavbar && (
         <SmallNavbarContainer>
           <SmallNavbarLinks to="/"><i className="fas fa-home" /></SmallNavbarLinks>
           <SmallNavbarLinks to="/curiosity">Curiosity</SmallNavbarLinks>
           <SmallNavbarLinks to="/opportunity">Opportunity</SmallNavbarLinks>
           <SmallNavbarLinks to="/spirit">Spirit</SmallNavbarLinks>
         </SmallNavbarContainer>
-      ) : <div /> }
+      )}
     </NavbarContainer>
   );
 };
