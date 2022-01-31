@@ -1,4 +1,5 @@
 import React from 'react';
+import OppAndSpirCam from '../elements/OppAndSpirCam';
 
 const Opportunity = () => {
   const int = 3;
@@ -6,6 +7,7 @@ const Opportunity = () => {
     <div>
       Opportunity
       {int}
+      <OppAndSpirCam />
     </div>
   );
 };

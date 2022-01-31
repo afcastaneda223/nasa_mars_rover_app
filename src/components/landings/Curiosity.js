@@ -1,4 +1,5 @@
 import React from 'react';
+import CuriosityCam from '../elements/CuriosityCam';
 
 const Curiosity = () => {
   const int = 3;
@@ -6,6 +7,7 @@ const Curiosity = () => {
     <div>
       Curiosity
       {int}
+      <CuriosityCam />
     </div>
   );
 };

@@ -9,7 +9,7 @@ import {
   NavbarLinks,
   SmallNavButton,
   SmallNavbarLinks,
-} from '../styles/Navbar.styles';
+} from '../../styles/Navbar.styles';
 
 const Navbar = () => {
   const [smallNavbar, setSmallNavbar] = useState(false);

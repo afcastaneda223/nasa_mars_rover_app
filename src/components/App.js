@@ -4,11 +4,11 @@ import { ThemeProvider } from 'styled-components';
 import { themes } from '../styles/themes.style';
 import { Container, Themebtn } from '../styles/styles.style';
 import GlobalStyle from '../styles/global.style';
-import Navbar from './Navbar';
-import Home from './Home';
-import Spirit from './Spirit';
-import Opportunity from './Opportunity';
-import Curiosity from './Curiosity';
+import Navbar from './elements/Navbar';
+import Home from './landings/Home';
+import Spirit from './landings/Spirit';
+import Opportunity from './landings/Opportunity';
+import Curiosity from './landings/Curiosity';
 
 function App() {
   const [currentTheme, setCurrentTheme] = useState('light');
