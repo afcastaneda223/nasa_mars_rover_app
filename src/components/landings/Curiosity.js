@@ -1,5 +1,6 @@
 import React from 'react';
 import CuriosityCam from '../elements/CuriosityCam';
+import SolDate from '../elements/SolDate';
 
 const Curiosity = () => {
   const int = 3;
@@ -8,6 +9,7 @@ const Curiosity = () => {
       Curiosity
       {int}
       <CuriosityCam />
+      <SolDate />
     </div>
   );
 };
