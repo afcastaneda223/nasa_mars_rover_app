@@ -22,6 +22,7 @@ const SelectCamera = styled.select`
     font-size: large;
     font-weight: 700;
     margin: 20px 0 20px 0;
+    text-align: center;
     &:focus {
       outline: none;
     }
@@ -42,12 +43,22 @@ const Datebtn = styled.button`
 `;
 
 const SolInput = styled.input`
-    width: 50vw;
-`;
-
-const MinMax = styled.div`
-    text-align: center;
-    font-weight: bolder;
+    width: 130px;
+    border: none;
+    background-color: ${(props) => props.theme.form.backgroundColor};
+    border: 2px solid ${(props) => props.theme.form.borderColor};
+    border-radius: 10px;
+    color: ${(props) => props.theme.form.color};
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 20px 10px 20px;
+    margin: 10px 0 20px 15px;
+    &:focus {
+      outline: none;
+      border: none;
+    }
 `;
 
 const EarthDate = styled(DatePicker)`
@@ -58,6 +69,7 @@ const EarthDate = styled(DatePicker)`
     padding: 10px 15px 10px 15px;
     font-weight: 700;
     font-size: large;
+    text-align: center;
 `;
 
 export {
@@ -65,6 +77,5 @@ export {
   SelectCamera,
   Datebtn,
   SolInput,
-  MinMax,
   EarthDate,
 };

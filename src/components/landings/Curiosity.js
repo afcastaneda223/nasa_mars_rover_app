@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  SelectContainer, SelectCamera, Datebtn, SolInput, MinMax, EarthDate,
+  SelectContainer, SelectCamera, Datebtn, SolInput, EarthDate,
 } from '../../styles/selection.style';
 import { CuriosityArray } from '../elements/CamArrays';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -24,7 +24,10 @@ const Curiosity = () => {
     setCamera(e.target.value);
   };
   const handleChangeSol = (e) => {
-    setSol(e.target.value);
+    e.preventDefault();
+    if (e.target.value < DifferenceInDays && e.target.value >= 0) {
+      setSol(e.target.value);
+    }
   };
   const handleChangeEarth = (e) => {
     setEarth(e);
@@ -45,14 +48,15 @@ const Curiosity = () => {
         {(currentDate === 'sol')
           ? (
             <div>
-              <SolInput type="range" min={0} max={DifferenceInDays} value={sol} onChange={handleChangeSol} />
-              <MinMax>
+              <label htmlFor="solinput">
                 <h3>
-                  Sol Date:
+                  Sol Date (between 0 and
                   {' '}
-                  {sol}
+                  {DifferenceInDays}
+                  ):
                 </h3>
-              </MinMax>
+              </label>
+              <SolInput type="number" min={0} max={DifferenceInDays} value={sol} onChange={handleChangeSol} id="solinput" />
             </div>
           )
           : (
