@@ -19,13 +19,10 @@ const Curiosity = () => {
   const currentCamera = (camera === '' ? '' : `&camera=${camera}`);
   const apikey = 'api_key=DEMO_KEY';
   const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?${currentCamera}&${date}&${apikey}`;
-
   const getOppositeDate = () => ((currentDate === 'sol') ? 'earth' : 'sol');
-
   const handleChangeCamera = (e) => {
     setCamera(e.target.value);
   };
-
   const handleChangeSol = (e) => {
     setSol(e.target.value);
   };
@@ -58,7 +55,16 @@ const Curiosity = () => {
               </MinMax>
             </div>
           )
-          : <EarthDate selected={earth} onChange={handleChangeEarth} dateFormat="yyyy/MM/dd" />}
+          : (
+            <EarthDate
+              selected={earth}
+              onChange={handleChangeEarth}
+              dateFormat="yyyy/MM/dd"
+              minDate={new Date('2012-08-06')}
+              maxDate={new Date()}
+              popperPlacement="bottom"
+            />
+          )}
         {url}
       </SelectContainer>
     </Container>
