@@ -2,27 +2,26 @@ import styled from 'styled-components';
 import DatePicker from 'react-datepicker';
 
 const SelectContainer = styled.div`
-    padding: 30px;
     width: 100%;
-    min-height: 40vh;
+    text-align: center;
+    font-weight: bolder;
+    padding: 30px;
     display: flex;
-    flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: space-evenly ;
-
+    align-items: center;
+    justify-content: center;
 `;
 
 const SelectCamera = styled.select`
-    width: auto;
+    overflow: hidden;
     background-color: ${(props) => props.theme.form.backgroundColor};
     border: 2px solid ${(props) => props.theme.form.borderColor};
     border-radius: 10px;
     color: ${(props) => props.theme.form.color};
     padding: 10px 15px 10px 15px;
-    overflow: hidden;
-    text-align: center;
     font-size: large;
     font-weight: 700;
+    margin: 20px 0 20px 0;
     &:focus {
       outline: none;
     }
@@ -36,10 +35,10 @@ const Datebtn = styled.button`
     color: ${(props) => props.theme.form.color};
     border-radius: 8px;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 20px;
+    font-weight: 700;
     padding: 10px 12px;
-    width: auto;
-    margin: 10px 0 10px 0;
+    margin: 0px 0 20px 0;
 `;
 
 const SolInput = styled.input`
@@ -47,14 +46,11 @@ const SolInput = styled.input`
 `;
 
 const MinMax = styled.div`
-    width: 100%;    
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
+    font-weight: bolder;
 `;
 
 const EarthDate = styled(DatePicker)`
-    width: auto;
-    text-align: center;
     background-color: ${(props) => props.theme.form.backgroundColor};
     border: 2px solid ${(props) => props.theme.form.borderColor};
     color: ${(props) => props.theme.form.color};
@@ -62,8 +58,6 @@ const EarthDate = styled(DatePicker)`
     padding: 10px 15px 10px 15px;
     font-weight: 700;
     font-size: large;
-    display: flex;
-    align-content: end;
 `;
 
 export {

@@ -15,10 +15,10 @@ function App() {
   const getOppositeTheme = () => ((currentTheme === 'light') ? 'dark' : 'light');
 
   return (
-    <ThemeProvider theme={themes[currentTheme]}>
-      <GlobalStyle />
-      <Router>
-        <Container>
+    <Container>
+      <ThemeProvider theme={themes[currentTheme]}>
+        <GlobalStyle />
+        <Router>
           <Navbar />
           <Themebtn onClick={() => setCurrentTheme(getOppositeTheme())}>
             <h1>
@@ -31,9 +31,9 @@ function App() {
             <Route path="/opportunity" element={<Opportunity />} />
             <Route path="/spirit" element={<Spirit />} />
           </Routes>
-        </Container>
-      </Router>
-    </ThemeProvider>
+        </Router>
+      </ThemeProvider>
+    </Container>
   );
 }
 
