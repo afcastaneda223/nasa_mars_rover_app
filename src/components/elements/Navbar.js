@@ -19,7 +19,7 @@ const Navbar = () => {
       <NavbarFullContainer>
         <LeftContainer>
           <i className="fas fa-globe-americas" />
-          Nasa
+          Mars Rover
         </LeftContainer>
         <RightContainer>
           <NavbarLinksContainer>

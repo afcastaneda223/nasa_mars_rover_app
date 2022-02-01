@@ -1,11 +1,17 @@
 import styled from 'styled-components';
+import img from './img.png';
 
 const Container = styled.div`
-    height: 100vh;
-    width: 100vw;
-    border: 5px solid black;
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
     background-color: ${(props) => props.theme.backgroundColor};
     color: ${(props) => props.theme.color};
+    background-image: url(${img});
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
 `;
 
 const Themebtn = styled.button`
@@ -17,10 +23,10 @@ const Themebtn = styled.button`
     box-sizing: border-box;
     cursor: pointer;
     font-size: 10px;
-    margin: 20px;
+    margin: 10px;
     padding: 10px 12px;
     width: auto;
-    position: absolute
+    position: absolute;
 `;
 
 export {

@@ -18,13 +18,13 @@ function App() {
     <ThemeProvider theme={themes[currentTheme]}>
       <GlobalStyle />
       <Router>
-        <Navbar />
-        <Themebtn onClick={() => setCurrentTheme(getOppositeTheme())}>
-          <h1>
-            {(currentTheme === 'light') ? <i className="fas fa-moon" /> : <i className="fas fa-sun" />}
-          </h1>
-        </Themebtn>
         <Container>
+          <Navbar />
+          <Themebtn onClick={() => setCurrentTheme(getOppositeTheme())}>
+            <h1>
+              {(currentTheme === 'light') ? <i className="fas fa-moon" /> : <i className="fas fa-sun" />}
+            </h1>
+          </Themebtn>
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/curiosity" element={<Curiosity />} />
