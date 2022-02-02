@@ -18,7 +18,7 @@ const Opportunity = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const date = (currentDate === 'sol') ? `sol=${sol}` : `earth_date=${earth.toLocaleDateString('en-CA')}`;
   const currentCamera = (camera === '' ? '' : `&camera=${camera}`);
-  const apikey = process.env.REACT_APP_NASA_API_KEY;
+  const apikey = 'jwMfIuXJUtVIru1CVEfvX7LmGQiVu5XHjrJTdZTz';
   const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/opportunity/photos?${currentCamera}&page=${pageNumber}&${date}&api_key=${apikey}`;
   const getOppositeDate = () => ((currentDate === 'sol') ? 'earth' : 'sol');
 
