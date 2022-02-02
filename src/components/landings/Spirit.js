@@ -13,7 +13,7 @@ import {
 const Spirit = () => {
   const [camera, setCamera] = useState('');
   const [currentDate, setCurrentDate] = useState('sol');
-  const [earth, setEarth] = useState(new Date());
+  const [earth, setEarth] = useState(new Date('2010-03-21'));
   const [sol, setSol] = useState(2208);
   const [pageNumber, setPageNumber] = useState(1);
   const date = (currentDate === 'sol') ? `sol=${sol}` : `earth_date=${earth.toLocaleDateString('en-CA')}`;
