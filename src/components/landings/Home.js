@@ -4,7 +4,7 @@ import curiosity from '../assets/curiosity.jpeg';
 import opportinity from '../assets/opportinity.jpeg';
 import spirit from '../assets/spirit.jpeg';
 import {
-  ImgContainer, HomeGrid, ImgCard, ImgPhoto,
+  ImgContainer, HomeGrid, HomeCard, HomePhoto, ImgText,
 } from '../../styles/images.style';
 import { Container } from '../../styles/styles.style';
 
@@ -14,21 +14,24 @@ const Home = () => {
     <Container>
       <ImgContainer>
         <HomeGrid>
-          <ImgCard key={curiosity}>
+          <HomeCard key={curiosity}>
+            <ImgText>Curiosity</ImgText>
             <Link to="/curiosity">
-              <ImgPhoto src={curiosity} alt="" className="curiosity Rover" />
+              <HomePhoto src={curiosity} alt="" className="curiosity Rover" />
             </Link>
-          </ImgCard>
-          <ImgCard key={opportinity}>
+          </HomeCard>
+          <HomeCard key={opportinity}>
+            <ImgText>Opportinity</ImgText>
             <Link to="/opportunity">
-              <ImgPhoto src={opportinity} alt="" className="opportinity Rover" />
+              <HomePhoto src={opportinity} alt="" className="opportinity Rover" />
             </Link>
-          </ImgCard>
-          <ImgCard key={spirit}>
+          </HomeCard>
+          <HomeCard key={spirit}>
+            <ImgText>Spirit</ImgText>
             <Link to="/spirit">
-              <ImgPhoto src={spirit} alt="" className="opportinity Rover" id={int} />
+              <HomePhoto src={spirit} alt="" className="opportinity Rover" id={int} />
             </Link>
-          </ImgCard>
+          </HomeCard>
         </HomeGrid>
       </ImgContainer>
     </Container>

@@ -14,7 +14,7 @@ const Opportunity = () => {
   const [camera, setCamera] = useState('');
   const [currentDate, setCurrentDate] = useState('sol');
   const [earth, setEarth] = useState(new Date('2018-06-11'));
-  const [sol, setSol] = useState(5111);
+  const [sol, setSol] = useState(5109);
   const [pageNumber, setPageNumber] = useState(1);
   const date = (currentDate === 'sol') ? `sol=${sol}` : `earth_date=${earth.toLocaleDateString('en-CA')}`;
   const currentCamera = (camera === '' ? '' : `&camera=${camera}`);
