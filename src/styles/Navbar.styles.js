@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const NavbarContainer = styled.nav`
     width: 100%;
-    height: ${(props) => (props.smallNavbar ? '350px' : '80px')};
+    height: ${(props) => (props.smallNavbar ? '330px' : '80px')};
     background-color: #193D91;
     display: flex;
     flex-direction: column;

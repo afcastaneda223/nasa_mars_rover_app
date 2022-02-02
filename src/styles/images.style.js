@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 
 const ImgContainer = styled.div`
-    width: 100%;
+    width: 90%;
     margin-inline: auto;
     padding-inline: 3rem;
 `;
 
 const ImgGrid = styled.div`
+    padding: 30px 0 30px 0;
     display: grid;
-    gap: 3rem;
+    gap: 3.5rem;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 `;
 
@@ -22,12 +23,11 @@ const ImgPhoto = styled.img`
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    object-position: 50% 50%;
     border-radius: 10px;
     cursor: pointer;
     transition: .5s ease-in-out;
     &:hover{
-        transform: scale(1.3);
+        transform: scale(1.2);
     }
 `;
 
