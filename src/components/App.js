@@ -9,6 +9,7 @@ import Home from './landings/Home';
 import Spirit from './landings/Spirit';
 import Opportunity from './landings/Opportunity';
 import Curiosity from './landings/Curiosity';
+import './App.css';
 
 function App() {
   const [currentTheme, setCurrentTheme] = useState('light');
