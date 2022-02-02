@@ -9,7 +9,7 @@ import {
   NavbarLinks,
   SmallNavButton,
   SmallNavbarLinks,
-} from '../styles/Navbar.styles';
+} from '../../styles/Navbar.styles';
 
 const Navbar = () => {
   const [smallNavbar, setSmallNavbar] = useState(false);
@@ -19,7 +19,7 @@ const Navbar = () => {
       <NavbarFullContainer>
         <LeftContainer>
           <i className="fas fa-globe-americas" />
-          Nasa
+          Mars Rover
         </LeftContainer>
         <RightContainer>
           <NavbarLinksContainer>
@@ -31,14 +31,14 @@ const Navbar = () => {
           </NavbarLinksContainer>
         </RightContainer>
       </NavbarFullContainer>
-      { smallNavbar ? (
+      { smallNavbar && (
         <SmallNavbarContainer>
           <SmallNavbarLinks to="/"><i className="fas fa-home" /></SmallNavbarLinks>
           <SmallNavbarLinks to="/curiosity">Curiosity</SmallNavbarLinks>
           <SmallNavbarLinks to="/opportunity">Opportunity</SmallNavbarLinks>
           <SmallNavbarLinks to="/spirit">Spirit</SmallNavbarLinks>
         </SmallNavbarContainer>
-      ) : <div /> }
+      )}
     </NavbarContainer>
   );
 };

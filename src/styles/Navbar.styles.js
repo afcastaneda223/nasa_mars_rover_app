@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const NavbarContainer = styled.nav`
     width: 100%;
-    height: ${(props) => (props.smallNavbar ? '50%' : '100%')};
+    height: ${(props) => (props.smallNavbar ? '330px' : '80px')};
     background-color: #193D91;
     display: flex;
     flex-direction: column;
@@ -11,31 +11,37 @@ const NavbarContainer = styled.nav`
     text-decoration: none;
     font-size: x-large;
     font-weight: 700;
+    padding: 0 20px 0 20px;
+    letter-spacing: 0.05em;
+    font-family: 'Bebas Neue', cursive;
     @media (min-width: 700px) {
-      height: 100px;
+      height: 80px;
     }
 `;
 
 const LeftContainer = styled.div`
-    flex: 20%;
-    height: 80px;
+    flex: 30%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 20px;
+    @media (max-width: 700px) {
+        flex: 70%;
+    }
 `;
 
 const RightContainer = styled.div`
-    flex: 80%;
+    flex: 70%;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    @media (max-width: 700px) {
+        flex: 30%;
+    }
 `;
 
 const NavbarFullContainer = styled.nav`
-    width: 100%;
     height: 80px;
     display: flex;
-    padding: 0px 20px 0 20px;
 
 `;
 
@@ -43,8 +49,7 @@ const NavbarLinksContainer = styled.nav`
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: space-between;
-    margin: 0 20px 0 20px;
+    justify-content: end;
     @media (max-width: 700px) {
       justify-content: end;
     }
@@ -54,7 +59,7 @@ const NavbarLinks = styled(Link)`
     color: #FFFFFF;
     text-decoration: none;
     font-size: x-large;
-    font-family: 'Prata', serif;
+    margin-left: 20px;
     @media (max-width: 700px) {
     display: none;
     }
@@ -89,7 +94,6 @@ const SmallNavbarLinks = styled(Link)`
     text-decoration: none;
     text-align: center;
     font-size: x-large;
-    font-family: 'Prata', serif;
     @media (min-width: 700px) {
     display: none;
     }

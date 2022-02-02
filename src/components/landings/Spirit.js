@@ -1,4 +1,5 @@
 import React from 'react';
+import OppAndSpirCam from '../elements/OppAndSpirCam';
 
 const Spirit = () => {
   const int = 3;
@@ -6,6 +7,7 @@ const Spirit = () => {
     <div>
       Spirit
       {int}
+      <OppAndSpirCam />
     </div>
   );
 };
