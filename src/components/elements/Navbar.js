@@ -18,8 +18,10 @@ const Navbar = () => {
     <NavbarContainer smallNavbar={smallNavbar}>
       <NavbarFullContainer>
         <LeftContainer>
-          <i className="fas fa-globe-americas" />
-          Mars Rover
+          <NavbarLinks to="/">
+            <i className="fas fa-globe-americas" />
+            Mars Rover
+          </NavbarLinks>
         </LeftContainer>
         <RightContainer>
           <NavbarLinksContainer>

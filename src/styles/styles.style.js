@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import img from './img.png';
+import img from '../components/assets/img.png';
 
 const Container = styled.div`
     min-width: 100%;
