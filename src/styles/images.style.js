@@ -4,6 +4,10 @@ const ImgContainer = styled.div`
     width: 90%;
     margin-inline: auto;
     padding-inline: 3rem;
+    text-align: center;
+    color: ${(props) => props.theme.form.color};
+    font-size: large;
+    font-weight: 700;
 `;
 
 const ImgGrid = styled.div`
