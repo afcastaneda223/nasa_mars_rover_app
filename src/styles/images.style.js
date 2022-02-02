@@ -35,9 +35,17 @@ const ImgPhoto = styled.img`
     }
 `;
 
+const HomeGrid = styled.div`
+    padding: 100px 0 30px 0;
+    display: grid;
+    gap: 3.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+`;
+
 export {
   ImgContainer,
   ImgGrid,
   ImgCard,
   ImgPhoto,
+  HomeGrid,
 };
