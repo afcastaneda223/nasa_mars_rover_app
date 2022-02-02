@@ -9,6 +9,7 @@ import {
   NavbarLinks,
   SmallNavButton,
   SmallNavbarLinks,
+  NavbarLeftLink,
 } from '../../styles/Navbar.styles';
 
 const Navbar = () => {
@@ -18,10 +19,10 @@ const Navbar = () => {
     <NavbarContainer smallNavbar={smallNavbar}>
       <NavbarFullContainer>
         <LeftContainer>
-          <NavbarLinks to="/">
+          <NavbarLeftLink to="/">
             <i className="fas fa-globe-americas" />
             Mars Rover
-          </NavbarLinks>
+          </NavbarLeftLink>
         </LeftContainer>
         <RightContainer>
           <NavbarLinksContainer>

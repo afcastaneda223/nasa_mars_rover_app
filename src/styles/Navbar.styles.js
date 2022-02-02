@@ -65,6 +65,13 @@ const NavbarLinks = styled(Link)`
     }
 `;
 
+const NavbarLeftLink = styled(Link)`
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: x-large;
+    margin-left: 20px;
+`;
+
 const SmallNavButton = styled.button`
     background-color: none;
     background: none;
@@ -109,4 +116,5 @@ export {
   NavbarLinks,
   SmallNavButton,
   SmallNavbarLinks,
+  NavbarLeftLink,
 };
