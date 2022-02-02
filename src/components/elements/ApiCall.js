@@ -22,7 +22,6 @@ const ApiCall = (pageNumber, ApiURL) => {
         [...prevPhotos, ...res.data.photos.map((p) => p.img_src)],
       )]);
       setLoading(false);
-      console.log(res.data);
     }).catch((e) => {
       if (axios.isCancel(e)) return;
       setError(true);
