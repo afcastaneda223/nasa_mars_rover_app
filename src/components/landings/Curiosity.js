@@ -5,6 +5,10 @@ import {
 import { CuriosityArray } from '../elements/CamArrays';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Container } from '../../styles/styles.style';
+import ApiCall from '../elements/ApiCall';
+import {
+  ImgContainer, ImgGrid, ImgCard, ImgPhoto,
+} from '../../styles/images.style';
 
 const Curiosity = () => {
   const landingDate = new Date('2012-08-06');
@@ -15,11 +19,13 @@ const Curiosity = () => {
   const [currentDate, setCurrentDate] = useState('sol');
   const [earth, setEarth] = useState(new Date());
   const [sol, setSol] = useState(DifferenceInDays);
+  const [pageNumber] = useState(1);
   const date = (currentDate === 'sol') ? `sol=${sol}` : `earth_date=${earth.toLocaleDateString('en-CA')}`;
   const currentCamera = (camera === '' ? '' : `&camera=${camera}`);
-  const apikey = 'api_key=DEMO_KEY';
-  const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?${currentCamera}&${date}&${apikey}`;
+  const apikey = process.env.REACT_APP_NASA_API_KEY;
+  const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?${currentCamera}&${date}&api_key=${apikey}`;
   const getOppositeDate = () => ((currentDate === 'sol') ? 'earth' : 'sol');
+
   const handleChangeCamera = (e) => {
     setCamera(e.target.value);
   };
@@ -32,6 +38,11 @@ const Curiosity = () => {
   const handleChangeEarth = (e) => {
     setEarth(e);
   };
+  const {
+    photos,
+    loading,
+    error,
+  } = ApiCall(pageNumber, url);
 
   return (
     <Container>
@@ -69,8 +80,22 @@ const Curiosity = () => {
               popperPlacement="bottom"
             />
           )}
-        {url}
       </SelectContainer>
+      <ImgContainer>
+        <ImgGrid>
+          {photos.map((photo) => (
+            <ImgCard key={photo}>
+              <ImgPhoto src={photo} alt="" className="" />
+            </ImgCard>
+          ))}
+        </ImgGrid>
+        <div>
+          { loading && 'Loading...' }
+        </div>
+        <div>
+          { error && 'Error' }
+        </div>
+      </ImgContainer>
     </Container>
   );
 };

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import img from './img.png';
 
 const Container = styled.div`
+    min-width: 100vw;
     height: 100%;
     min-height: 100vh;
     width: 100%;
