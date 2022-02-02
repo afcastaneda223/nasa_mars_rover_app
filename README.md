@@ -3,6 +3,8 @@
 
 ![Screen Shot](./src/components/assets/Screen_Shot.png)
 
+ - [Live Demo](https://nasa-mars-rover-2022.netlify.app)
+
 Additional description about the project and its features.
 
 ## Built With
