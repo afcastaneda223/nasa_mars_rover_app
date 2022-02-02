@@ -70,6 +70,6 @@ export const OppAndSpirArray = [
   {
     id: 6,
     value: 'MINITES',
-    content: 'Miniature Thermal Emission Spectrometer (Mini-TES)',
+    content: '(Mini-TES)',
   },
 ];

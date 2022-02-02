@@ -46,7 +46,7 @@ const Spirit = () => {
   return (
     <Container>
       <SelectContainer>
-        <h1>Curiosity</h1>
+        <h1>Spirit</h1>
         <SelectCamera value={camera} onChange={handleChangeCamera}>
           {OppAndSpirArray.map((e) => (
             <option value={e.value} key={e.id}>{e.content}</option>
