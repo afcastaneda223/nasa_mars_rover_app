@@ -72,10 +72,36 @@ const EarthDate = styled(DatePicker)`
     text-align: center;
 `;
 
+const NextContainer = styled.div`
+width: 100%;
+text-align: center;
+font-weight: bolder;
+padding: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+`;
+
+const NextBtn = styled.button`
+border: none;
+background-color: ${(props) => props.theme.form.backgroundColor};
+border: 2px solid ${(props) => props.theme.form.borderColor};
+border-radius: 10px;
+color: ${(props) => props.theme.form.color};
+border-radius: 8px;
+cursor: pointer;
+font-size: 20px;
+font-weight: 700;
+padding: 10px 12px;
+margin: 0px 10px 20px 10px;
+`;
+
 export {
   SelectContainer,
   SelectCamera,
   Datebtn,
   SolInput,
   EarthDate,
+  NextContainer,
+  NextBtn,
 };

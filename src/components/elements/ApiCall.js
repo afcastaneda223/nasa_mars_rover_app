@@ -5,7 +5,6 @@ const ApiCall = (pageNumber, ApiURL) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(true);
   const [photos, setPhotos] = useState([]);
-  const [hasMore, setHasMore] = useState(false);
 
   useEffect(() => {
     setPhotos([]);
@@ -22,7 +21,6 @@ const ApiCall = (pageNumber, ApiURL) => {
       setPhotos((prevPhotos) => [...new Set(
         [...prevPhotos, ...res.data.photos.map((p) => p.img_src)],
       )]);
-      setHasMore(res.data.photos.length > 0);
       setLoading(false);
       console.log(res.data);
     }).catch((e) => {
@@ -31,7 +29,7 @@ const ApiCall = (pageNumber, ApiURL) => {
     });
   }, [pageNumber, ApiURL]);
   return {
-    loading, error, photos, hasMore,
+    loading, error, photos,
   };
 };
 

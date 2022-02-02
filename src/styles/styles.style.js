@@ -10,8 +10,8 @@ const Container = styled.div`
     color: ${(props) => props.theme.color};
     background-image: url(${img});
     background-repeat: no-repeat;
-    background-position: 50% 0;
-    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50%; 
     font-family: 'Roboto', sans-serif;
 `;
 

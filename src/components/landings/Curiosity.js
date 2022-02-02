@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  SelectContainer, SelectCamera, Datebtn, SolInput, EarthDate,
+  SelectContainer, SelectCamera, Datebtn, SolInput, EarthDate, NextContainer, NextBtn,
 } from '../../styles/selection.style';
 import { CuriosityArray } from '../elements/CamArrays';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -19,24 +19,27 @@ const Curiosity = () => {
   const [currentDate, setCurrentDate] = useState('sol');
   const [earth, setEarth] = useState(new Date());
   const [sol, setSol] = useState(DifferenceInDays);
-  const [pageNumber] = useState(1);
+  const [pageNumber, setPageNumber] = useState(1);
   const date = (currentDate === 'sol') ? `sol=${sol}` : `earth_date=${earth.toLocaleDateString('en-CA')}`;
   const currentCamera = (camera === '' ? '' : `&camera=${camera}`);
   const apikey = process.env.REACT_APP_NASA_API_KEY;
-  const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?${currentCamera}&${date}&api_key=${apikey}`;
+  const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?${currentCamera}&page=${pageNumber}&${date}&api_key=${apikey}`;
   const getOppositeDate = () => ((currentDate === 'sol') ? 'earth' : 'sol');
 
   const handleChangeCamera = (e) => {
     setCamera(e.target.value);
+    setPageNumber(1);
   };
   const handleChangeSol = (e) => {
     e.preventDefault();
     if (e.target.value < DifferenceInDays && e.target.value >= 0) {
       setSol(e.target.value);
+      setPageNumber(1);
     }
   };
   const handleChangeEarth = (e) => {
     setEarth(e);
+    setPageNumber(1);
   };
   const {
     photos,
@@ -80,6 +83,20 @@ const Curiosity = () => {
               popperPlacement="bottom"
             />
           )}
+        <NextContainer>
+          {(pageNumber >= 2)
+      && (
+      <NextBtn onClick={() => setPageNumber(pageNumber - 1)}>
+        Back
+      </NextBtn>
+      ) }
+          {(photos.length === 25 && pageNumber >= 1)
+      && (
+      <NextBtn onClick={() => setPageNumber(pageNumber + 1)}>
+        Next
+      </NextBtn>
+      ) }
+        </NextContainer>
       </SelectContainer>
       <ImgContainer>
         <ImgGrid>
@@ -96,6 +113,20 @@ const Curiosity = () => {
           { error && 'Error' }
         </div>
       </ImgContainer>
+      <NextContainer>
+        {(pageNumber >= 2)
+      && (
+      <NextBtn onClick={() => setPageNumber(pageNumber - 1)}>
+        Back
+      </NextBtn>
+      ) }
+        {(photos.length === 25 && pageNumber >= 1)
+      && (
+      <NextBtn onClick={() => setPageNumber(pageNumber + 1)}>
+        Next
+      </NextBtn>
+      ) }
+      </NextContainer>
     </Container>
   );
 };
